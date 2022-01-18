@@ -11,17 +11,18 @@ function BreweryDetail({breweries}) {
     const [brewery, setBrewery] = useState({})
     const {id} = useParams()
     const navigate = useNavigate()
-
+  
     function handleGoBack (){
         navigate("/")
     }
 
     useEffect(()=>{
-        const foundBrewery = breweries.find(brewery => brewery.id === id)
+        const cloneBreweries = [...breweries]
+        const foundBrewery = cloneBreweries.find(brewery => brewery.id === id)
         if(foundBrewery){
             setBrewery(foundBrewery)
         }
-    },[])
+    },[breweries])
 
     return (
         <div style={{display: 'flex', justifyContent: 'center', width: '100vw', height: '100vh', alignItems: 'center',}}>

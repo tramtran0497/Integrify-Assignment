@@ -21,7 +21,7 @@ function App() {
         const responseJson = await responseUrl.json();
         setBreweries(responseJson)
       } catch(err){
-        console.log(err)
+        console.error(err)
       }
     }
 

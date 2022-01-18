@@ -9,33 +9,32 @@ function BreweryList({breweries}) {
     const [displayBre, setDisplayBre] = useState([])
     
     useEffect(()=>{
-        console.log("trong useEffect")
         setDisplayBre(breweries)
     },[breweries])
-
-    function displayEmptyValue(EmptyValue){
-        if(EmptyValue === ""){
-            setDisplayBre(breweries)
-        }
-    }
   
-    function handleSearching(value){
+    function handleSearching(text){
+        if(text === "") {
+            setDisplayBre(breweries)
+            return
+        }
+
         const cloneBreweries = [...breweries]
         const searchList = cloneBreweries.filter(brewery => {
           for(const property in brewery ){
-            if(brewery[property] && brewery[property].toLowerCase().includes(value.toLowerCase().toString())){
+            if(brewery[property] && brewery[property].toLowerCase().includes(text.toLowerCase().toString())){
               return true;
             }
           } 
 
           return false;
         })
+        
         setDisplayBre(searchList) 
     }
     
     return (
         <div>
-            <Search onSearch={handleSearching} handleEmptyValue={displayEmptyValue}/>
+            <Search onSearch={handleSearching} />
             <Container sx={{}}>
                 <Grid container justifyContent="center" spacing={3} alignItems="stretch">
                     {displayBre.map(brewery => (
