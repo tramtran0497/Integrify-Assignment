@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Search from './Components/Search';
 import {
   BrowserRouter as Router,
   Routes,
@@ -53,9 +52,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Search onSearch={handleSearching}/>
         <Routes>
-            <Route path="/" element={<BreweryList breweries={displayBreweries}/>}/>
+            <Route path="/" element={<BreweryList breweries={displayBreweries} onSearch={handleSearching}/>}/>
             <Route path="/:id" element={<BreweryDetail breweries={displayBreweries}/>}/>
         </Routes>
       </div>
