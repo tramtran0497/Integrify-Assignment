@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 function BreweryDetail({breweries}) {
     const [brewery, setBrewery] = useState({})
@@ -16,6 +16,7 @@ function BreweryDetail({breweries}) {
             setBrewery(foundBrewery)
         }
     },[])
+
     return (
         <div>
             <div>

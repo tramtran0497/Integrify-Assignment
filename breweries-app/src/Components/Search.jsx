@@ -4,7 +4,7 @@ function Search({onSearch}) {
     const [value, setValue] = useState("")
 
     function handleChange(e){
-        e.preventDefault();
+        e.preventDefault()
         setValue(e.target.value)
         onSearch(value)
     }
