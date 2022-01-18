@@ -34,26 +34,11 @@ function App() {
     }
   },[breweries])
 
-  function handleSearching(value){
-    const cloneBreweries = [...breweries]
-    const searchList = cloneBreweries.filter(brewery => {
-      for(const property in brewery ){
-        if(brewery[property] && brewery[property].toLowerCase().includes(value.toLowerCase().toString())){
-          return true;
-        }
-      } 
-
-      return false;
-    })
-
-    setDisplayBreweries(searchList) 
-  }
-
   return (
     <Router>
       <div className="App">
         <Routes>
-            <Route path="/" element={<BreweryList breweries={displayBreweries} onSearch={handleSearching}/>}/>
+            <Route path="/" element={<BreweryList breweries={displayBreweries}/>}/>
             <Route path="/:id" element={<BreweryDetail breweries={displayBreweries}/>}/>
         </Routes>
       </div>

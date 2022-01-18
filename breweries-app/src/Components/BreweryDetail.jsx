@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { CardHeader } from '@mui/material'
 import Button from '@mui/material/Button'
-import Container from '@mui/material/Container';
 
 function BreweryDetail({breweries}) {
     const [brewery, setBrewery] = useState({})
@@ -23,8 +22,6 @@ function BreweryDetail({breweries}) {
             setBrewery(foundBrewery)
         }
     },[])
-
-    console.log("checking", breweries)
 
     return (
         <div style={{display: 'flex', justifyContent: 'center', width: '100vw', height: '100vh', alignItems: 'center',}}>
