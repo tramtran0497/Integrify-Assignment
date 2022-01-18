@@ -5,7 +5,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import _ from 'lodash';
 import BreweryList from './Components/BreweryList';
 import BreweryDetail from './Components/BreweryDetail';
 
