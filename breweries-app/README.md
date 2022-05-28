@@ -2,6 +2,8 @@
 
 This project is deployed demo on Netlify [Brewery-App](https://61e754c32504800b89429170--infallible-borg-4ba875.netlify.app/#/).
 
+DockerHub link [DockerHub-Breweries-v1](https://hub.docker.com/r/tramtran0497/breweries-v1)
+
 ## Features 
 - Fetching breweries API and rendering in Home page.
 - Searching functionality for brewery list in Home page.
